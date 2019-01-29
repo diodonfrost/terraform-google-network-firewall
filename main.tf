@@ -1,3 +1,10 @@
+terraform {
+  backend "gcs" {}
+}
+
+provider "google" {
+}
+
 resource "google_compute_firewall" "new-firewall" {
   name    = "${var.network}-firewall-${var.name}"
   network = "${var.network}"
